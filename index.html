@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASHEN THRONE — Graduation Showcase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="v3.css">
+</head>
+<body class="bars-hidden">
+
+<div id="boot">
+  <div class="logo"><div class="glow"></div><span class="main">ASHEN</span><span class="sub">THRONE</span></div>
+  <div class="gauge"><i id="bootBar"></i></div>
+  <div class="gauge-meta"><span>LOADING</span><span id="bootPct">0%</span></div>
+</div>
+
+<!-- ═════════ 01 TITLE ═════════ -->
+<section class="slide" id="s-title">
+  <div class="media grade-mid shade-c"><img src="media/hero-city.jpg" alt=""></div>
+  <div class="center">
+    <div class="kicker c in" style="--d:0">A DARK FANTASY ACTION GAME</div>
+    <div class="logo in" style="--d:150;margin-top:2.4rem"><div class="glow"></div><span class="main">ASHEN</span><span class="sub">THRONE</span></div>
+    <div class="lore title-tag in" style="--d:600">The kingdom has fallen. Enter the ruins. Face what remains.</div>
+    <div id="pressAny" class="in" style="--d:1000">PRESS ANY BUTTON</div>
+    <nav class="menu" id="titleMenu">
+      <button class="mi sel" data-act="new"><span>NEW GAME</span></button>
+      <button class="mi" data-act="overview"><span>PROJECT OVERVIEW</span></button>
+      <button class="mi" data-act="controls"><span>CONTROLS</span></button>
+      <button class="mi" data-act="fullscreen"><span>FULLSCREEN</span></button>
+      <button class="mi" data-act="sound"><span>SOUND &nbsp;<em class="snd">OFF</em></span></button>
+    </nav>
+  </div>
+  <div class="title-foot">INDUK UNIVERSITY &nbsp;·&nbsp; GAME &amp; VR CONTENT DESIGN &nbsp;·&nbsp; GRADUATION PROJECT 2026</div>
+</section>
+
+<!-- ═════════ 02 WORLD ═════════ -->
+<section class="slide" id="s-world">
+  <div class="media kb grade-mid shade-l"><img src="media/hero-city.jpg" alt=""></div>
+  <div class="frame">
+    <div class="world-col">
+      <div class="kicker in-x" style="--d:0">CHAPTER I</div>
+      <h2 class="h-xl in" style="--d:120">The Ashen<br>Kingdom</h2>
+      <p class="lore in" style="--d:500">The city breathes no more. Yet something ancient still waits upon the throne.</p>
+      <p class="lead in" style="--d:800">잿빛으로 뒤덮인 왕국. 무너진 성과 폐허 속에서 시작되는 여정. 플레이어는 검을 들고 황폐한 세계를 탐험하며 강력한 보스에게 도전한다.</p>
+      <div class="facts in" style="--d:1100">
+        <div><b>3D BOSS ACTION</b><span>장르</span></div>
+        <div><b>UNITY 6 · HDRP</b><span>엔진</span></div>
+        <div><b>김영빈</b><span>기획 · 개발 · 아트</span></div>
+        <div><b>2026 —</b><span>제작 기간</span></div>
+      </div>
+    </div>
+    <div class="pillars" id="pillars"></div>
+  </div>
+</section>
+
+<!-- ═════════ 03 ARSENAL ═════════ -->
+<section class="slide" id="s-arsenal">
+  <div class="ghost" id="arsGhost">THE WANDERER</div>
+  <div class="frame">
+    <div class="ars">
+      <div class="ars-cats in-x" id="arsCats"></div>
+      <div class="ars-stage in" style="--d:150"><div class="shaft"></div><div class="spot"></div><img class="model" id="arsModel" alt=""></div>
+      <div class="ars-info in" style="--d:300" id="arsInfo"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 04 GAME START ═════════ -->
+<section class="slide" id="s-start">
+  <div class="media kb grade-dark shade-c"><video src="media/cine_fight.mp4" poster="media/cine_fight.jpg" muted loop playsinline style="filter:brightness(.35) saturate(.5) blur(2px)"></video></div>
+  <div class="center">
+    <div class="logo in" style="--d:0"><div class="glow"></div><span class="main">ASHEN</span><span class="sub">THRONE</span></div>
+    <nav class="menu in" style="--d:500" id="startMenu">
+      <button class="mi sel" data-act="start"><span>START GAME</span></button>
+      <button class="mi" data-act="back"><span>RETURN</span></button>
+    </nav>
+  </div>
+</section>
+
+<!-- ═════════ 05 LOADING ═════════ -->
+<section class="slide" id="s-loading">
+  <div class="center">
+    <div class="logo"><div class="glow"></div><span class="main">ASHEN</span><span class="sub">THRONE</span></div>
+    <div class="gauge"><i id="loadBar"></i></div>
+    <div class="gauge-meta"><span>LOADING</span><span id="loadPct">0%</span></div>
+  </div>
+  <div class="tip"><div class="label">TIP</div><p class="lore" id="tipEn"></p><p class="body" id="tipKo"></p></div>
+</section>
+
+<!-- ═════════ 06 COMBAT TUTORIAL ═════════ -->
+<section class="slide" id="s-tutorial">
+  <div class="media grade-mid shade-l" id="tutMedia"></div>
+  <div class="frame">
+    <div class="tut">
+      <div class="tut-list">
+        <div class="kicker in-x" style="--d:0">CHAPTER III · TUTORIAL</div>
+        <h2 class="h-l in" style="--d:120">Learn the Blade</h2>
+        <div id="tutList" class="in" style="--d:300"></div>
+        <div class="tut-card in" style="--d:450" id="tutCard"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 07 SYSTEMS ═════════ -->
+<section class="slide" id="s-system">
+  <div class="media grade-dark shade-l"><video src="media/cine_fight.mp4" poster="media/cine_fight.jpg" muted loop playsinline style="filter:brightness(.38) saturate(.6) blur(2px)"></video></div>
+  <div class="frame">
+    <div class="sys">
+      <div class="sys-head">
+        <div class="kicker in-x" style="--d:0">CORE SYSTEMS</div>
+        <h2 class="h-l in" style="--d:120">Every Swing<br>Has a Cost</h2>
+        <p class="lead in" style="--d:350">공격 · 회피 · 질주가 모두 스태미나를 쓰는 전투. 아래 버튼으로 실제 게임과 같은 규칙을 확인할 수 있습니다.</p>
+        <div class="hud-card in" style="--d:550" id="hudCard">
+          <div class="gauge-row"><span>HEALTH</span><div class="g-track"><i class="g-hp" style="width:78%"></i></div><em>156</em></div>
+          <div class="gauge-row"><span>STAMINA</span><div class="g-track"><i class="g-st" id="stFill" style="width:100%"></i><s class="tick"></s></div><em id="stVal">100</em></div>
+          <div class="hud-state" id="hudState"></div>
+          <div class="hud-btns">
+            <button class="btn" data-st="attack">ATTACK −15</button>
+            <button class="btn" data-st="heavy">HEAVY −25</button>
+            <button class="btn" data-st="dodge">DODGE −25</button>
+            <button class="btn" data-st="sprint">SPRINT −12</button>
+          </div>
+          <div class="hud-log" id="hudLog"></div>
+        </div>
+      </div>
+      <div class="sys-list in" style="--d:300" id="sysList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 08 BOSS ENCOUNTER ═════════ -->
+<section class="slide" id="s-encounter">
+  <div class="media kb shade-blood"><video src="media/cine_fight.mp4" poster="media/cine_fight.jpg" muted loop playsinline style="filter:brightness(.5) contrast(1.15) saturate(.55)"></video></div>
+  <div class="center">
+    <div class="kicker c in" style="--d:0">CHAPTER IV · BOSS ENCOUNTER</div>
+    <h2 class="boss-name in" style="--d:250"><small>KNIGHT OF THE</small>ABYSS</h2>
+    <div class="boss-ko in" style="--d:700">심연의 기사</div>
+    <div class="dialog in" style="--d:1100">
+      <h3>보스전에 도전하시겠습니까?</h3>
+      <p>이곳을 지나면 강력한 적과의 전투가 시작됩니다.</p>
+      <div class="row" id="encBtns">
+        <button class="btn ko sel" data-act="yes">도전한다</button>
+        <button class="btn ko" data-act="no">돌아간다</button>
+      </div>
+    </div>
+  </div>
+  <div class="enc-foot in" style="--d:1500"><button class="link" data-video="media/boss_entrance.mp4">&#9654; &nbsp;IN-GAME FOOTAGE</button></div>
+</section>
+
+<!-- ═════════ 09 BESTIARY ═════════ -->
+<section class="slide" id="s-bestiary">
+  <div class="media"><video src="media/cine_fight.mp4" poster="media/cine_fight.jpg" muted loop playsinline style="filter:blur(26px) brightness(.22) saturate(.5);transform:scale(1.15)"></video></div>
+  <div class="frame">
+    <div class="best2">
+      <aside class="pat-panel">
+        <div class="kicker in-x" style="--d:0">BOSS PATTERNS</div>
+        <h2 class="h-l in" style="--d:120">Knight of<br>the Abyss</h2>
+        <div class="bhp in" style="--d:250">
+          <div class="meta"><span id="gateTxt">항상 사용</span><span id="bhpTxt">HP 100%</span></div>
+          <div class="trk"><i id="bhpFill" style="width:100%"></i><s style="left:70%"></s><s style="left:50%"></s><s style="left:30%"></s></div>
+        </div>
+        <div class="pat-card in" style="--d:400" id="patCard"></div>
+        <div class="pat-index in" style="--d:550" id="patIndex"></div>
+      </aside>
+      <div class="stage-video in" style="--d:200">
+        <video id="bossVideo" src="media/boss_full.mp4" poster="media/boss_full.jpg" muted loop playsinline></video>
+        <span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+        <div class="sv-cap"><span class="rec"></span>IN-GAME · BOSS DUEL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 10 DEVELOPMENT ═════════ -->
+<section class="slide" id="s-dev">
+  <div class="media grade-dark shade-l"><img src="media/cine_fight.jpg" alt="" style="filter:brightness(.25) saturate(.5) blur(3px)"></div>
+  <div class="frame">
+    <div class="dev-head">
+      <div><div class="kicker in-x" style="--d:0">CHAPTER V · DEVELOPMENT</div><h2 class="h-l in" style="--d:120">The Road So Far</h2></div>
+      <div class="tally in" style="--d:300" id="tally"></div>
+    </div>
+    <div class="dev">
+      <div class="ledger in" style="--d:350" id="ledger"></div>
+      <ol class="road in" style="--d:550" id="road"><span class="label">NEXT STEPS</span></ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ 11 ENDING ═════════ -->
+<section class="slide" id="s-ending">
+  <div class="media kb grade-dark shade-c"><video src="media/cine_victory.mp4" poster="media/cine_victory.jpg" muted loop playsinline></video></div>
+  <div class="center">
+    <div class="kicker c in" style="--d:0">THANK YOU FOR PLAYING</div>
+    <div class="logo in" style="--d:250;margin-top:2rem"><div class="glow"></div><span class="main">ASHEN</span><span class="sub">THRONE</span></div>
+    <p class="lead closing in" style="--d:700">ASHEN THRONE은 다크 판타지 세계관을 기반으로 캐릭터와 환경을 제작하고, 이를 Unity에서 플레이 가능한 게임 경험으로 구현하는 졸업작품입니다. 앞으로 전투의 완성도와 보스전의 몰입감을 높여 하나의 완성된 게임 경험으로 발전시키겠습니다.</p>
+    <div class="credit-row in" style="--d:1000">
+      <div><span class="label">INSTITUTION</span><b>INDUK UNIVERSITY</b></div>
+      <div><span class="label">DEPARTMENT</span><b>GAME &amp; VR CONTENT DESIGN</b></div>
+      <div><span class="label">DEVELOPER</span><b>김영빈 · KIM YOUNG-BIN</b></div>
+    </div>
+    <nav class="menu in" style="--d:1300" id="endMenu">
+      <button class="mi sel" data-act="replay"><span>REPLAY</span></button>
+      <button class="mi" data-act="title"><span>BACK TO TITLE</span></button>
+    </nav>
+  </div>
+</section>
+
+<!-- cinematic chrome -->
+<canvas id="ash"></canvas>
+<div id="vignette"></div>
+<div id="grain"></div>
+<header class="bar" id="barTop">
+  <button class="wordmark" data-goto="0">ASHEN <i>THRONE</i></button>
+  <ul class="chapters" id="chapters"></ul>
+  <div class="bar-meta bar-right"><button id="fsBtn" class="fs-btn"><span class="fs-ico"></span><span id="fsTxt">FULLSCREEN</span></button><button id="sndBtn">SOUND <span class="snd">OFF</span></button></div>
+</header>
+<footer class="bar" id="barBot">
+  <div class="bar-meta" id="sceneName"></div>
+  <div class="deck-nav">
+    <button data-nav="prev">&#8592; PREV</button>
+    <div class="progress"><i id="progFill"></i></div>
+    <span class="deck-count" id="deckCount"></span>
+    <button data-nav="next">NEXT &#8594;</button>
+  </div>
+  <div class="bar-meta"><button data-ov="chapterOv">M · CHAPTERS</button></div>
+</footer>
+<div id="notes"><span id="noteTag"></span><p id="noteL1"></p><p id="noteL2"></p></div>
+<div id="chapterCard"><div class="num" id="ccNum"></div><div class="line"></div><div class="name" id="ccName"></div><div class="ko" id="ccKo"></div></div>
+
+<div class="overlay" id="controlsOv">
+  <div class="ov-box">
+    <div class="kicker c">PLAYER &amp; PRESENTER</div>
+    <h2 class="h-l">Controls</h2>
+    <div class="ctrl">
+      <div>
+        <h4>IN GAME</h4>
+        <div class="r">이동 · 질주<span class="ks"><span class="kbd">WASD</span><span class="kbd">SHIFT</span></span></div>
+        <div class="r">공격 · 연계 (최대 5타)<span class="ks"><span class="kbd">LMB</span><span class="kbd">J</span></span></div>
+        <div class="r">회전 강공격<span class="ks"><span class="kbd">E</span></span></div>
+        <div class="r">구르기 · 백스텝<span class="ks"><span class="kbd">SPACE</span></span></div>
+        <div class="r">가드 · 패링<span class="ks"><span class="kbd">RMB</span><span class="kbd">G</span></span></div>
+        <div class="r">락온<span class="ks"><span class="kbd">Q</span><span class="kbd">TAB</span></span></div>
+      </div>
+      <div>
+        <h4>PRESENTATION</h4>
+        <div class="r">다음 · 이전 장면<span class="ks"><span class="kbd">&#8594;</span><span class="kbd">&#8592;</span></span></div>
+        <div class="r">항목 이동 · 선택<span class="ks"><span class="kbd">&#8593;</span><span class="kbd">&#8595;</span><span class="kbd">ENTER</span></span></div>
+        <div class="r">장면 선택<span class="ks"><span class="kbd">M</span><span class="kbd">1–0</span></span></div>
+        <div class="r">타이틀로<span class="ks"><span class="kbd">ESC</span></span></div>
+        <div class="r">사운드<span class="ks"><span class="kbd">S</span></span></div>
+        <div class="r">전체 화면<span class="ks"><span class="kbd">F</span><span class="kbd">F11</span></span></div>
+        <div class="r">발표 대본 보기<span class="ks"><span class="kbd">N</span></span></div>
+      </div>
+    </div>
+  </div>
+  <button class="ov-close" data-close>CLOSE &#10005;</button>
+</div>
+<div class="overlay" id="chapterOv">
+  <div class="ov-box">
+    <div class="kicker c">PRESENTATION</div>
+    <h2 class="h-l">Chapters</h2>
+    <div class="chap-grid" id="chapGrid"></div>
+  </div>
+  <button class="ov-close" data-close>CLOSE &#10005;</button>
+</div>
+<div class="overlay" id="viewer"></div>
+
+<script src="data.js"></script>
+<script src="v3.js"></script>
+</body>
+</html>
