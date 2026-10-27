@@ -426,8 +426,18 @@ body.bars-hidden #barBot { transform: translateY(100%); }
 .pat-card { margin-top: 1.4rem; padding: 1.3rem 1.5rem; background: linear-gradient(180deg, rgba(14,10,11,.82), rgba(6,5,6,.9)); border: 1px solid rgba(201,164,108,.25); border-left: 2px solid var(--blood-hi); }
 .pat-card.swap { animation: patIn .6s var(--ease); }
 @keyframes patIn { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+.pc-num-row { display: flex; align-items: center; justify-content: space-between; gap: .8rem; }
 .pc-num { font-family: var(--caps); font-size: 2.2rem; line-height: 1; color: var(--gold-hi); }
 .pc-num small { font-size: .7rem; letter-spacing: .2em; color: var(--bone-3); margin-left: .5rem; }
+.pc-sub { font-size: .88rem; font-weight: 400; color: var(--gold-lo); margin-left: .45rem; letter-spacing: 0; }
+.pc-gate-badge { display: inline-flex; align-items: center; gap: .35rem; font-family: var(--caps); font-size: .62rem; letter-spacing: .08em; padding: .26rem .65rem; border-radius: 2px; border: 1px solid currentColor; }
+.pc-gate-badge .badge-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.pc-gate-badge.always { color: var(--gold-hi); border-color: rgba(201,164,108,.35); background: rgba(201,164,108,.1); }
+.pc-gate-badge.g70 { color: #f0a35e; border-color: rgba(240,163,94,.45); background: rgba(240,163,94,.12); }
+.pc-gate-badge.g50 { color: #e65c5c; border-color: rgba(230,92,92,.5); background: rgba(201,54,54,.18); }
+.pc-gate-badge.g30 { color: #ff4757; border-color: rgba(255,71,87,.6); background: rgba(255,71,87,.22); box-shadow: 0 0 10px rgba(255,71,87,.3); animation: ultGlow 1.8s infinite ease-in-out; }
+@keyframes ultGlow { 0%, 100% { opacity: .9; box-shadow: 0 0 6px rgba(255,71,87,.25); } 50% { opacity: 1; box-shadow: 0 0 14px rgba(255,71,87,.55); } }
+.pc-unlock-meta b { color: var(--gold-hi); }
 .pc-name { font-weight: 500; font-size: 1.35rem; margin-top: .5rem; }
 .pc-en { font-family: var(--caps); font-size: .55rem; letter-spacing: .32em; color: var(--gold-lo); margin-top: .2rem; }
 .pc-desc { font-size: .9rem; line-height: 1.75; color: var(--bone); margin-top: .7rem; }
@@ -439,6 +449,10 @@ body.bars-hidden #barBot { transform: translateY(100%); }
 .pat-index button { font-family: var(--caps); font-size: .55rem; letter-spacing: .1em; width: 2rem; height: 1.6rem; border: 1px solid rgba(125,118,108,.35); color: var(--bone-3); transition: all .3s; }
 .pat-index button.seen { color: var(--bone-2); border-color: rgba(201,164,108,.3); }
 .pat-index button.on { color: #fff; background: var(--blood); border-color: var(--blood-hi); }
+.pat-index button.always { border-bottom: 2px solid rgba(201,164,108,.5); }
+.pat-index button.g70 { border-bottom: 2px solid #f0a35e; }
+.pat-index button.g50 { border-bottom: 2px solid #e65c5c; }
+.pat-index button.g30 { border-bottom: 2px solid #ff4757; }
 .stage-video { position: relative; aspect-ratio: 16 / 9; width: 100%; max-height: 100%; justify-self: center; align-self: center; background: #000; box-shadow: 0 40px 80px rgba(0,0,0,.7), 0 0 0 1px rgba(201,164,108,.18); }
 .stage-video video { width: 100%; height: 100%; object-fit: cover; }
 .stage-video .cn { position: absolute; width: 22px; height: 22px; border: 1px solid var(--gold-hi); }

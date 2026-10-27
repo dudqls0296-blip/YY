@@ -273,23 +273,36 @@ $$('[data-st]').forEach(b => b.onclick = () => {
 $$('#encBtns .btn').forEach(b => b.onclick = () => { if (b.dataset.act === 'yes') { snd.slash(); go(8, { noCard: true }); } else go(6, { noCard: true }); });
 
 /* ═════════ 09 BOSS PATTERNS — video keeps playing, left panel steps through ═════════ */
-const ORDER = AT.gates.flatMap(g => AT.patterns.filter(p => p.gate === g.at));
+const ORDER = [...AT.patterns].sort((a, b) => a.n - b.n);
+const GATE_INFO = {
+  1:  { cls: 'always', badge: '항상 사용 (HP 100%)', label: '항상 사용', hpText: 'HP 100%' },
+  .7: { cls: 'g70', badge: '체력 70% 이하 해금', label: '체력 70% 이하 해금', hpText: 'HP ≤ 70%' },
+  .5: { cls: 'g50', badge: '체력 50% 이하 · 2페이즈', label: '체력 50% 이하 · 2페이즈', hpText: 'HP ≤ 50%' },
+  .3: { cls: 'g30', badge: '체력 30% 이하 · 필살기', label: '체력 30% 이하 · 필살기', hpText: 'HP ≤ 30%' }
+};
+const gateOf = p => GATE_INFO[p.gate] || GATE_INFO[1];
 let pK = 0;
-$('#patIndex').innerHTML = ORDER.map((p, k) => `<button data-k="${k}" title="${p.name}">${pad(p.n)}</button>`).join('');
+$('#patIndex').innerHTML = ORDER.map((p, k) => {
+  const g = gateOf(p);
+  return `<button data-k="${k}" class="${g.cls}" title="${pad(p.n)}. ${p.name} [${g.label}]">${pad(p.n)}</button>`;
+}).join('');
 $$('#patIndex button').forEach(b => b.onclick = () => showPat(+b.dataset.k));
 function showPat(k) {
-  pK = k; const p = ORDER[k], g = AT.gates.find(x => x.at === p.gate);
+  pK = k; const p = ORDER[k], g = gateOf(p);
   $$('#patIndex button').forEach((b, j) => { b.classList.toggle('on', j === k); b.classList.toggle('seen', j < k); });
-  $('#bhpFill').style.width = p.gate * 100 + '%'; $('#bhpTxt').textContent = p.gate === 1 ? 'HP 100%' : `HP ≤ ${p.gate * 100}%`; $('#gateTxt').textContent = g.label;
+  $('#bhpFill').style.width = p.gate * 100 + '%'; $('#bhpTxt').textContent = g.hpText; $('#gateTxt').textContent = g.label;
   const c = $('#patCard'); c.classList.remove('swap'); void c.offsetWidth; c.classList.add('swap');
   c.innerHTML = `
-    <div class="pc-num">${pad(p.n)}<small>/ 12</small></div>
-    <h3 class="pc-name">${p.name}</h3>
+    <div class="pc-num-row">
+      <div class="pc-num">${pad(p.n)}<small>/ 12</small></div>
+      <span class="pc-gate-badge ${g.cls}"><i class="badge-dot"></i>${g.badge}</span>
+    </div>
+    <h3 class="pc-name">${p.name}${p.sub ? ` <small class="pc-sub">(${p.sub})</small>` : ''}</h3>
     <div class="pc-en">${p.id.replace(/([a-z])([A-Z])/g, '$1 $2').toUpperCase()}</div>
     <p class="pc-desc">${p.desc}</p>
     <div class="timing"><div class="w" style="flex:${p.w}">${p.w}s</div><div class="a" style="flex:${p.a}">${p.a}s</div><div class="r" style="flex:${p.r}">${p.r}s</div></div>
     <div class="timing-key"><span>전조</span><span>판정</span><span>반격 기회</span></div>
-    <div class="pc-meta"><span>피해 <b>${p.dmg}</b></span><span>사거리 <b>${p.range}</b></span><span>패링 <b>${p.parry ? '가능' : '불가'}</b></span></div>
+    <div class="pc-meta"><span class="pc-unlock-meta">해금 조건 <b>${g.badge}</b></span><span>피해 <b>${p.dmg}</b></span><span>사거리 <b>${p.range}</b></span><span>패링 <b>${p.parry ? '가능' : '불가'}</b></span></div>
     <div class="counter"><span class="label">COUNTER</span>${p.counter}</div>`;
 }
 showPat(0);
